@@ -12,11 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.scheduler.BukkitScheduler;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-
 import static org.bukkit.Bukkit.getServer;
 
 public class VanishCommand implements CommandExecutor, Listener {
@@ -30,25 +28,21 @@ public class VanishCommand implements CommandExecutor, Listener {
                 if (Main.invisiblePlayers.contains(player.getUniqueId())) {
                     for (Player players : Bukkit.getOnlinePlayers()) {
                         players.showPlayer(player);
-
                     }
                     Main.invisiblePlayers.remove(player.getUniqueId());
                     player.sendMessage("Jesteś widoczny dla innych graczy");
-
                     player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("§6» §eJesteś widoczny dla innych graczy §6«"));
                 } else if (!Main.invisiblePlayers.contains(player.getUniqueId())) {
                     for (Player players : Bukkit.getOnlinePlayers()) {
                         players.hidePlayer(player);
                     }
                     Main.invisiblePlayers.add(player.getUniqueId());
-
                     handleVanishNotificationBar(player);
                 }
             }
         }
         return false;
     }
-
     public void handleVanishNotificationBar(Player player) {
         BukkitScheduler scheduler = getServer().getScheduler();
         int bukkitTaskId = scheduler.scheduleSyncRepeatingTask(Main.getMain(), () -> {
