@@ -12,12 +12,6 @@ public final class Main extends JavaPlugin {
     public static final ArrayList<UUID> invisiblePlayers = new ArrayList<>();
     @Override
     public void onEnable(){
-    getLogger().info("╭╮╱╱╱╱╭╮╱╱╱╱╱╱╱╱╱╱╱╱╱╭╮╱╭━━━┳━━━┳━━━┳━━━╮\n" +
-                "┃┃╱╱╱╱┃┃╱╱╱╱╱╱╱╱╱╱╱╱╱┃┃╱┃╭━╮┃╭━╮┃╭━╮┃╭━━╯\n" +
-                "┃┃╭┳╮╭┫╰━┳━━┳━━┳━╮╭━━┫┃╭┫┃╱╰┫┃╱┃┃╰━╯┃╰━━╮\n" +
-                "┃╰╯┫┃┃┃╭╮┃━━┫╭╮┃╭╮┫┃━┫╰╯┫┃╱╭┫┃╱┃┃╭╮╭┫╭━━╯\n" +
-                "┃╭╮┫╰╯┃╰╯┣━━┃╰╯┃┃┃┃┃━┫╭╮┫╰━╯┃╰━╯┃┃┃╰┫╰━━╮\n" +
-                "╰╯╰┻━━┻━━┻━━┻━━┻╯╰┻━━┻╯╰┻━━━┻━━━┻╯╰━┻━━━╯");
         VanishCommand vanish = new VanishCommand();
         getCommand("vanish").setExecutor(vanish);
         main = this;
