@@ -1,0 +1,8 @@
+name: KubsonekCore
+version: 0.1
+main: me.kubsoneekk.pl.Main
+
+authors: [ kubsoneekk ]
+commands:
+  vanish:
+    aliases: v
